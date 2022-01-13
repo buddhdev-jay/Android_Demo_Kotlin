@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".Kotlin_Basic"
+            android:exported="false" />
+        <activity
+            android:name=".Kotlin_bASIC"
+            android:exported="false"
+            android:label="@string/title_activity_kotlin_basic"
+            android:theme="@style/Theme.Android_Demo_Kotlin.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
