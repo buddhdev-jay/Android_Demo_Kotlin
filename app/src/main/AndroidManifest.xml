@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".UiElementActivity"
+            android:exported="false" />
+        <activity
             android:name=".Kotlin_Basic"
             android:exported="false" />
         <activity

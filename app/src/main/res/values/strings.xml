@@ -1,4 +1,19 @@
 <resources>
     <string name="app_name">Android_Demo_Kotlin</string>
     <string name="title_activity_kotlin_basic">Kotlin_bASIC</string>
+    <string name="ui_element">UI_Element</string>
+    <string name="go_to_kotlin_basic">Go to KOTLIN bASIC</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email_id">Email Id</string>
+    <string name="rb_name_male">Male</string>
+    <string name="rb_name_female">Female</string>
+    <string name="txtview_gender">Gender</string>
+    <string name="txt_hobbies">Hobbies</string>
+    <string name="txt_cricket">Cricket</string>
+    <string name="basket_ball">Basket Ball</string>
+    <string name="football">Football</string>
+    <string name="btn_submit">Submit</string>
+    <string name="enter_name_toast">Enter Name</string>
+    <string name="enter_email_toast">Enter Email</string>
+    <string name="done">Done</string>
 </resources>

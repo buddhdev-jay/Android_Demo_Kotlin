@@ -14,6 +14,7 @@ class Kotlin_Basic : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kotlin_basic)
+
         //Data Types
         //Number Data Type
         val int1: Int = 123
