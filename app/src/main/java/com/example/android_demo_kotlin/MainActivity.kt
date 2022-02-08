@@ -3,7 +3,9 @@ package com.example.android_demo_kotlin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.android_demo_kotlin.differentLayout.LayoutActivity
 import kotlinx.android.synthetic.main.activity_main.btn_kotlin_basic
+import kotlinx.android.synthetic.main.activity_main.btn_layouts
 import kotlinx.android.synthetic.main.activity_main.btn_ui_element
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_ui_element.setOnClickListener {
             intent = Intent(applicationContext, UiElementActivity::class.java)
+            startActivity(intent)
+        }
+        btn_layouts.setOnClickListener {
+            intent = Intent(applicationContext, LayoutActivity::class.java)
             startActivity(intent)
         }
 

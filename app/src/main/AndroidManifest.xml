@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".differentLayout.IncludeandMergeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.GridLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.FrameLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.LayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.ConstraintLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.RelativeLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.LinearLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".UiElementActivity"
             android:exported="false" />
         <activity

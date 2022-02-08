@@ -3,14 +3,14 @@ package com.example.android_demo_kotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
+import com.example.android_demo_kotlin.utils.ZERO
 import kotlinx.android.synthetic.main.activity_uielement.btn_submit
 import kotlinx.android.synthetic.main.activity_uielement.editxt_email
 import kotlinx.android.synthetic.main.activity_uielement.editxt_name
-import kotlinx.android.synthetic.main.toast_layout.tvMessage
 import kotlinx.android.synthetic.main.toast_layout.view.tvMessage
 
 class UiElementActivity : AppCompatActivity() {
@@ -37,6 +37,7 @@ class UiElementActivity : AppCompatActivity() {
         val toast = Toast(this)
         val view: View = LayoutInflater.from(this).inflate(R.layout.toast_layout, null)
         view.tvMessage.text = message
+        toast.setGravity(Gravity.TOP, ZERO, ZERO)
         toast.view = view
         toast.show()
     }
