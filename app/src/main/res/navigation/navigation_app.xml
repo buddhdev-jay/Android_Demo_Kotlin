@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/addmessage_fragment">
+
+    <fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.example.android_demo_kotlin.fragments.GalleryFragment"
+        android:label="fragment_gallary"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/addmessage_fragment"
+        android:name="com.example.android_demo_kotlin.fragments.AddMessageFragment"
+        android:label="fragment_add_message"
+        tools:layout="@layout/fragment_add_message">
+        <action
+            android:id="@+id/addmessage_to_viewmessage"
+            app:destination="@id/viewmessage_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewmessage_fragment"
+        android:name="com.example.android_demo_kotlin.fragments.ViewMessageFragment"
+        android:label="fragment_view_message"
+        tools:layout="@layout/fragment_view_message">
+        <argument
+            android:name="data"
+            android:defaultValue="Hello"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
