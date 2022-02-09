@@ -141,6 +141,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_expandable_recyclerview" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_bottomnavigation"
             android:layout_width="match_parent"
@@ -152,5 +153,18 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_expandable_listview" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_fragments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="@string/fragments"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_expandable_listview" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -11,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android_demo_kotlin.R
 import com.example.android_demo_kotlin.model.People
 
-class RecyclerViewAdapter(private var peopleList: ArrayList<People>, private val itemClickCallBack: (Any) -> Unit) : RecyclerView.Adapter<RecyclerViewAdapter.RecyclerviewViewHolder>() {
+class RecyclerviewAdapter(private var peopleList: ArrayList<People>, private val itemClickCallBack: (Any) -> Unit) :
+    RecyclerView.Adapter<RecyclerviewAdapter.RecyclerviewViewHolder>() {
     private var context: Context? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerviewViewHolder {

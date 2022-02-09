@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.example.android_demo_kotlin.adapter.RecyclerViewAdapter
+import com.example.android_demo_kotlin.adapter.RecyclerviewAdapter
 import com.example.android_demo_kotlin.model.People
 import com.example.android_demo_kotlin.utils.THREE_THOUSAND
 import kotlinx.android.synthetic.main.activity_recycler_view.recylerview_person
@@ -13,13 +13,13 @@ import kotlinx.android.synthetic.main.activity_recycler_view.recylerview_person
 class RecyclerViewActivity : AppCompatActivity() {
 
     var peopleList = ArrayList<People>()
-    var adapter : RecyclerViewAdapter? = null
+    var adapter : RecyclerviewAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_view)
         addPersonList()
-        adapter = RecyclerViewAdapter(peopleList) {
+        adapter = RecyclerviewAdapter(peopleList) {
             Toast.makeText(this,it.toString(),Toast.LENGTH_SHORT).show()
         }
         recylerview_person.adapter = adapter

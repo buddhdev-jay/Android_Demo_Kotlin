@@ -11,7 +11,7 @@ class ViewPageroneActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pagerone)
-        view_pager.adapter = ViewpageroneAdapter(supportFragmentManager)
+        view_pager.adapter = ViewpageroneAdapter(this,supportFragmentManager)
         tab_layout.setupWithViewPager(view_pager)
     }
 }
