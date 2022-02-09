@@ -118,5 +118,6 @@
         <string name="lbl_linearLayout_activity">LinearLayout Activity</string>
         <string name="lbl_uiElement_activity">UiElement Activity</string>
         <string name="people_data_key_name">PEOPLE_DATA</string>
+        <string name="fragment_count_log_tag">FragmentCountLog</string>
 
 </resources>

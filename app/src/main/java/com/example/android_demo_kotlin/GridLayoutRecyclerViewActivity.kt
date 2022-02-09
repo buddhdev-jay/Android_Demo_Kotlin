@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.android_demo_kotlin.adapter.RecyclerviewGridAdapter
 import com.example.android_demo_kotlin.model.People
-import com.example.android_demo_kotlin.utils.TW0
+import com.example.android_demo_kotlin.utils.TWO
 import kotlinx.android.synthetic.main.activity_grid_layout_recycler_view.recylerview_grid
 
 class GridLayoutRecyclerViewActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class GridLayoutRecyclerViewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_grid_layout_recycler_view)
         addPersonList()
         recyclerAdapter = RecyclerviewGridAdapter(peopleList)
-        val layout_manager = GridLayoutManager(this, TW0)
+        val layout_manager = GridLayoutManager(this, TWO)
         layout_manager.apply {
             orientation = LinearLayoutManager.VERTICAL
         }

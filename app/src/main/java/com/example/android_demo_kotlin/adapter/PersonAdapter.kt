@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.android_demo_kotlin.R
 import com.example.android_demo_kotlin.model.Person
+import com.example.android_demo_kotlin.utils.ZERO
 
 class PersonAdapter(context: Context, val item: ArrayList<Person>) : BaseAdapter() {
     private var PersonList = arrayListOf<Person>()
@@ -23,12 +24,11 @@ class PersonAdapter(context: Context, val item: ArrayList<Person>) : BaseAdapter
     }
 
     override fun getItem(position: Int): Any {
-        //Not yet implemented
-        return 0
+        return ZERO
     }
 
     override fun getItemId(position: Int): Long {
-        return 0
+        return ZERO.toLong()
     }
 
     override fun getView(position: Int, view: View?, parent: ViewGroup?): View? {
@@ -47,5 +47,4 @@ class PersonAdapter(context: Context, val item: ArrayList<Person>) : BaseAdapter
         val txtname: TextView? = view?.findViewById(R.id.txtview_name_listview)
         val txtaddress: TextView? = view?.findViewById(R.id.txtview_address_listview)
     }
-
 }
