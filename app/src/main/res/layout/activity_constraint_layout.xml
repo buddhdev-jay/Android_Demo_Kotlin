@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".differentLayout.ConstraintLayoutActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title_feedback_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:text="@string/feedback_title"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/editxt_name_constraint"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editxt_name_constraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/editxt_border"
+        android:hint="@string/hint_your_name"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hinttextform"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_country_constraint"
+        app:layout_constraintEnd_toStartOf="@id/editxt_email_constraint"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_feedback_constraint" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editxt_email_constraint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/editxt_border"
+        android:hint="@string/hint_your_email"
+        android:inputType="textEmailAddress"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hinttextform"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/editxt_name_constraint"
+        app:layout_constraintBottom_toTopOf="@+id/spinner_country_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/editxt_name_constraint"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_feedback_constraint" />
+
+    <Spinner
+        android:id="@+id/spinner_country_constraint"
+        style="@style/SpinnerTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="20dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/editxt_feedback_constraint"
+        app:layout_constraintTop_toBottomOf="@+id/editxt_email_constraint"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editxt_feedback_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/editxt_border"
+        android:hint="@string/hint_feedback_details"
+        android:inputType="textMultiLine"
+        android:lines="8"
+        android:padding="20dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hinttextform"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/chcx_box_form_constraint"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_country_constraint"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <androidx.appcompat.widget.AppCompatCheckBox
+        android:id="@+id/chcx_box_form_constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="#bfbfbf"
+        android:text="@string/chck_txt_would_you_like_and_email_response"
+        android:textColor="#bfbfbf"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_submit_form_constraint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editxt_feedback_constraint" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_submit_form_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#bfbfbf"
+        android:padding="5dp"
+        android:text="@string/btn_txt_send_feedback"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_chain_one"
+        app:layout_constraintTop_toBottomOf="@+id/chcx_box_form_constraint"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_chain_one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#bfbfbf"
+        android:padding="5dp"
+        android:text="@string/chain_button_1"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_chain_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit_form_constraint" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_chain_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#bfbfbf"
+        android:padding="5dp"
+        android:text="@string/chain_button_2"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_chain_three"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_chain_one"
+        app:layout_constraintTop_toBottomOf="@id/btn_submit_form_constraint" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_chain_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#bfbfbf"
+        android:padding="5dp"
+        android:text="@string/chain_button__3"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_chain_two"
+        app:layout_constraintTop_toBottomOf="@id/btn_submit_form_constraint" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

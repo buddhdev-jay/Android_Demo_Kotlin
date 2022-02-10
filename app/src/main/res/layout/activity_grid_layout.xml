@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:rowCount="4"
+    tools:context=".differentLayout.GridLayoutActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:text="@string/txt_gridview_1" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:maxWidth="60dp"
+        android:maxHeight="10dp"
+        android:text="@string/txt_gridview_2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:text="@string/txt_gridview_3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_gravity="fill"
+        android:text="@string/txt_gridview_4" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill"
+        android:text="@string/txt_gridview_5" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_gravity="fill"
+        android:text="@string/txt_gridview_6" />
+
+</GridLayout>
