@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.example.android_demo_kotlin.R
 
 class GridLayoutActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grid_layout)
