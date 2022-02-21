@@ -10,6 +10,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".ExpandableListviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExpandableListViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExpandableRecyclerviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewpagertwoRecyclerviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BottomNavigationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPagertwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewPageroneActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GridLayoutRecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".differentLayout.ConstraintLayoutGuidelineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".differentLayout.IncludeandMergeActivity"
             android:exported="false" />
         <activity
