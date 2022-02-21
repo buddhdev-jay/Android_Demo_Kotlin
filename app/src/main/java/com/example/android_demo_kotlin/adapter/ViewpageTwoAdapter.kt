@@ -9,8 +9,7 @@ import com.example.android_demo_kotlin.utils.ONE
 import com.example.android_demo_kotlin.utils.TW0
 import com.example.android_demo_kotlin.utils.ZERO
 
-class ViewpageTwoAdapter(fragmentActivity: FragmentActivity) :
-    FragmentStateAdapter(fragmentActivity) {
+class ViewpageTwoAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
         return TW0

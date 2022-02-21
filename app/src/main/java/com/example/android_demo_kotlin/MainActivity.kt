@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(applicationContext,ViewPageroneActivity::class.java)
             startActivity(intent)
         }
+        btn_recyclerview.setOnClickListener {
+            intent = Intent(applicationContext,RecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
        btn_viewpager_two.setOnClickListener {
             intent = Intent(applicationContext,ViewPagertwoActivity::class.java)
             startActivity(intent)
