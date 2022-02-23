@@ -1,5 +1,6 @@
 package com.example.android_demo_kotlin.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,15 +10,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.android_demo_kotlin.R
 import com.example.android_demo_kotlin.model.People
 
-class ViewPagerRecyclerAdapter(private var peopleList: ArrayList<People>) :
-    RecyclerView.Adapter<ViewPagerRecyclerAdapter.ViewpagerHolder>() {
+class RecyclerviewGridAdapter(private var peopleList: ArrayList<People>) : RecyclerView.Adapter<RecyclerviewGridAdapter.RecyclerviewgridViewHolder>() {
+    private var context: Context? = null
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewpagerHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.viewpager_recyclerview, parent, false)
-        return ViewpagerHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerviewgridViewHolder {
+        context = parent.context
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.gridlayout_recyclerview_item_layout, parent, false)
+        return RecyclerviewgridViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ViewpagerHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerviewgridViewHolder, position: Int) {
         val person = peopleList[position]
         holder.apply {
             imgView?.setImageResource(person.image)
@@ -29,8 +31,9 @@ class ViewPagerRecyclerAdapter(private var peopleList: ArrayList<People>) :
         return peopleList.count()
     }
 
-    class ViewpagerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class RecyclerviewgridViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgView: ImageView? = itemView.findViewById(R.id.recylerview_grid_img)
         val txtname: TextView? = itemView.findViewById(R.id.txtview_name_recyclerview_grid)
     }
+
 }
