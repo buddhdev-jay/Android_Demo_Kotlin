@@ -34,20 +34,40 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(applicationContext, LayoutActivity::class.java)
             startActivity(intent)
         }
-        btn_viewpager_one.setOnClickListener {
-            intent = Intent(applicationContext,ViewPageroneActivity::class.java)
+        btn_listview.setOnClickListener {
+            intent = Intent(applicationContext, ListviewActivity::class.java)
             startActivity(intent)
         }
         btn_recyclerview.setOnClickListener {
-            intent = Intent(applicationContext,RecyclerViewActivity::class.java)
+            intent = Intent(applicationContext, RecyclerViewActivity::class.java)
             startActivity(intent)
         }
-       btn_viewpager_two.setOnClickListener {
-            intent = Intent(applicationContext,ViewPagertwoActivity::class.java)
+        btn_recyclerview_grid.setOnClickListener {
+            intent = Intent(applicationContext, GridLayoutRecyclerViewActivity::class.java)
+            startActivity(intent)
+        }
+        btn_viewpager_one.setOnClickListener {
+            intent = Intent(applicationContext, ViewPageroneActivity::class.java)
+            startActivity(intent)
+        }
+        btn_viewpager_two.setOnClickListener {
+            intent = Intent(applicationContext, ViewPagertwoActivity::class.java)
             startActivity(intent)
         }
         btn_viewpager_recyclerview.setOnClickListener {
-            intent = Intent(applicationContext,ViewpagertwoRecyclerviewActivity::class.java)
+            intent = Intent(applicationContext, ViewpagertwoRecyclerviewActivity::class.java)
+            startActivity(intent)
+        }
+        btn_expandable_recyclerview.setOnClickListener {
+            intent = Intent(applicationContext, ExpandableRecyclerviewActivity::class.java)
+            startActivity(intent)
+        }
+        btn_expandable_listview.setOnClickListener {
+            intent = Intent(applicationContext, ExpandableListviewActivity::class.java)
+            startActivity(intent)
+        }
+        btn_bottomnavigation.setOnClickListener {
+            intent = Intent(applicationContext, BottomNavigationActivity::class.java)
             startActivity(intent)
         }
     }
