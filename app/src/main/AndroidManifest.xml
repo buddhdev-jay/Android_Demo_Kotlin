@@ -10,67 +10,83 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
-            android:name=".ExpandableListviewActivity"
-            android:exported="false" />
+            android:name=".FragmentActivity"
+            android:exported="false"
+            android:label="@string/lbl_fragment_activity" />
         <activity
-            android:name=".ExpandableListViewActivity"
-            android:exported="false" />
+            android:name=".IntentActivity"
+            android:exported="false"
+            android:label="@string/lbl_intent_activity" />
+        <activity
+            android:name=".ExpandableListviewActivity"
+            android:exported="false"
+            android:label="@string/lbl_expandablelistview_sctivity" />
         <activity
             android:name=".ExpandableRecyclerviewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_expandablerecyclerview_activity" />
         <activity
             android:name=".ViewpagertwoRecyclerviewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BottomNavigationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_viewpagertworecyclerview_activity" />
         <activity
             android:name=".ViewPagertwoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_viewpagertwo_activity" />
         <activity
             android:name=".ViewPageroneActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_viewpagerone_activity" />
         <activity
             android:name=".GridLayoutRecyclerViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_gridLayoutRecycler_viewactivity" />
         <activity
             android:name=".differentLayout.ConstraintLayoutGuidelineActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_constraintLayoutGuideline_activity" />
         <activity
             android:name=".RecyclerViewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_recyclerView_activity" />
         <activity
             android:name=".ListviewActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_listview_activity" />
         <activity
             android:name=".differentLayout.IncludeandMergeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_includeandMerge_activity" />
         <activity
             android:name=".differentLayout.GridLayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_gridLayout_activity" />
         <activity
             android:name=".differentLayout.FrameLayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/btn_frame_layout" />
         <activity
             android:name=".differentLayout.LayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_layout_activity" />
         <activity
             android:name=".differentLayout.ConstraintLayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/btn_constraint_layout" />
         <activity
             android:name=".differentLayout.RelativeLayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_relativeLayout_activity" />
         <activity
             android:name=".differentLayout.LinearLayoutActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_linearLayout_activity" />
         <activity
             android:name=".UiElementActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/lbl_uiElement_activity" />
         <activity
             android:name=".Kotlin_Basic"
-            android:exported="false" />
-        <activity
-            android:name=".Kotlin_bASIC"
             android:exported="false"
             android:label="@string/title_activity_kotlin_basic"
             android:theme="@style/Theme.Android_Demo_Kotlin.NoActionBar" />
@@ -78,8 +94,10 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

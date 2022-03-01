@@ -46,11 +46,11 @@
         <string name="listview_address">listview_address</string>
         <string name="recyclerview_grid">Recyclerview Grid</string>
         <string-array name="country">
-            <item>India</item>
-            <item>USA</item>
-            <item>China</item>
-            <item>Japan</item>
-            <item>Other</item>
+                <item>India</item>
+                <item>USA</item>
+                <item>China</item>
+                <item>Japan</item>
+                <item>Other</item>
         </string-array>
         <!-- TODO: Remove or change this placeholder text -->
         <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -82,12 +82,10 @@
         <string name="pending_intent">Pending intent</string>
         <string name="btn_txt_navigation_controller">Navigation Controller</string>
         <string name="title_activity_pending">PendingActivity</string>
-        <!-- Strings used for fragments for navigation -->
         <string name="first_fragment_label">First Fragment</string>
         <string name="second_fragment_label">Second Fragment</string>
         <string name="next">Next</string>
         <string name="previous">Previous</string>
-
         <string name="hello_first_fragment">Hello first fragment</string>
         <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
         <string name="btn_txt_start_pending_intent">start Pending Intent</string>
@@ -95,5 +93,30 @@
         <string name="tabtwo_string">Tab Two</string>
         <string name="mainactivity_tag">MainActivityLog</string>
         <string name="fragment_count">FragmentCountLog</string>
+        <string name="mainactivity_log_tag">MainActivityLog</string>
+        <string name="activity_log_tag">ActivitytwoLog</string>
+        <string name="google_url">https://www.google.com/</string>
+        <string name="txt_data_name">Txt data</string>
+        <string name="name_key_intent">name</string>
+        <string name="lbl_fragment_activity">Fragment Activity</string>
+        <string name="lbl_intent_activity">Intent Activity</string>
+        <string name="lbl_expandablelistview_sctivity">ExpandableListview Activity</string>
+        <string name="lbl_expandablerecyclerview_activity">ExpandableRecyclerview Activity</string>
+        <string name="lbl_viewpagertworecyclerview_activity">ViewpagertwoRecyclerview Activity</string>
+        <string name="lbl_viewpagertwo_activity">ViewPagertwo Activity</string>
+        <string name="lbl_viewpagerone_activity">ViewPagerone Activity</string>
+        <string name="lbl_gridLayoutRecycler_viewactivity">GridLayoutRecycler ViewActivity</string>
+        <string name="lbl_constraintLayoutGuideline_activity">ConstraintLayoutGuideline Activity</string>
+        <string name="lbl_recyclerView_activity">RecyclerView Activity</string>
+        <string name="lbl_listview_activity">Listview Activity</string>
+        <string name="lbl_includeandMerge_activity">IncludeandMerge Activity</string>
+        <string name="lbl_gridLayout_activity">GridLayout Activity</string>
+        <string name="lbl_frameLayout_activity">FrameLayout Activity</string>
+        <string name="lbl_layout_activity">Layout Activity</string>
+        <string name="lbl_constraintLayout_activity">ConstraintLayout Activity</string>
+        <string name="lbl_relativeLayout_activity">RelativeLayout Activity</string>
+        <string name="lbl_linearLayout_activity">LinearLayout Activity</string>
+        <string name="lbl_uiElement_activity">UiElement Activity</string>
+        <string name="people_data_key_name">PEOPLE_DATA</string>
 
 </resources>

@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/bottomnav_home"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:title="Home" />
+        android:id="@+id/bottomnav_gallery"
+        android:icon="@drawable/ic_baseline_image_24"
+        android:title="@string/menu_gallery" />
     <item
-        android:id="@+id/bottomnav_search"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:title="Search" />
+        android:id="@+id/bottomnav_add_message"
+        android:icon="@drawable/ic_baseline_add_comment_24"
+        android:title="@string/menu_add_message" />
     <item
-        android:id="@+id/bottomnav_menu"
-        android:icon="@drawable/ic_baseline_menu_24"
-        android:title="Profile" />
+        android:id="@+id/bottomnav_view_message"
+        android:icon="@drawable/ic_baseline_add_comment_24"
+        android:title="@string/menu_view_message" />
 
 </menu>
