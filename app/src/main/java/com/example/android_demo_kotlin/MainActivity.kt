@@ -23,11 +23,12 @@ import kotlinx.android.synthetic.main.activity_main.btn_viewpager_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_two
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = getString(R.string.mainactivity_log_tag)
+    lateinit var TAG : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        TAG = getString(R.string.mainactivity_log_tag)
         Log.d(TAG, "Oncreate Called")
         btn_kotlin_basic.setOnClickListener {
             intent = Intent(applicationContext, Kotlin_Basic::class.java)

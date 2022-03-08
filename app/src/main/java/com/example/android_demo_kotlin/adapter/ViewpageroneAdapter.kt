@@ -9,13 +9,13 @@ import com.example.android_demo_kotlin.Fragments.FavoritesFragment
 import com.example.android_demo_kotlin.Fragments.RecentFragment
 import com.example.android_demo_kotlin.R
 import com.example.android_demo_kotlin.utils.ONE
-import com.example.android_demo_kotlin.utils.TW0
+import com.example.android_demo_kotlin.utils.TWO
 import com.example.android_demo_kotlin.utils.ZERO
 
 class ViewpageroneAdapter(val context: Context,fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getCount(): Int {
-        return TW0
+        return TWO
     }
 
     override fun getItem(position: Int): Fragment {
@@ -24,7 +24,7 @@ class ViewpageroneAdapter(val context: Context,fm: FragmentManager) : FragmentPa
                 FavoritesFragment()
             }
             ONE -> {
-                RecentFragment()
+               RecentFragment()
             }
             else -> {
                 FavoritesFragment()

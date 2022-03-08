@@ -118,5 +118,10 @@
         <string name="lbl_linearLayout_activity">LinearLayout Activity</string>
         <string name="lbl_uiElement_activity">UiElement Activity</string>
         <string name="people_data_key_name">PEOPLE_DATA</string>
+        <string name="fragment_count_log_tag">FragmentCountLog</string>
+        <string name="key_intent">key</string>
+        <string name="hello_nullsafe_string">Hello</string>
+        <string name="key_message_intent">message</string>
+        <string name="image_receive_type">image/</string>
 
 </resources>
