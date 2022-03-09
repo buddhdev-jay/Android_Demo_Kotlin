@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".PendingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_pending"
+            android:theme="@style/Theme.Android_Demo_Kotlin.NoActionBar" />
+        <activity
+            android:name=".NavgraphActivity"
+            android:exported="false"
+            android:label="@string/lbl_navgraph_activity"/>
+        <activity
             android:name=".FragmentActivity"
             android:exported="false"
             android:label="@string/lbl_fragment_activity" />
@@ -101,6 +110,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name="MyReceiver" >
+        </receiver>
     </application>
 
 </manifest>

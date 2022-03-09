@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 import com.example.android_demo_kotlin.R
 
 class ViewMessageFragment : Fragment() {
     lateinit var messageTxtView: TextView
+    private val args : ViewMessageFragmentArgs by navArgs()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_view_message, container, false)
@@ -19,6 +21,6 @@ class ViewMessageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         messageTxtView = view.findViewById(R.id.txtview_message_fragment)
-        messageTxtView.text = arguments?.getString(getString(R.string.key_message_intent))
+        messageTxtView.text = args.data
     }
 }

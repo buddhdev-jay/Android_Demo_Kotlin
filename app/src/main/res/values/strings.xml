@@ -123,5 +123,10 @@
         <string name="hello_nullsafe_string">Hello</string>
         <string name="key_message_intent">message</string>
         <string name="image_receive_type">image/</string>
+        <string name="lbl_navgraph_activity">Navgraph Activity</string>
+        <string name="receiver_txt">Times Up!!!!</string>
+        <string name="open_app_title">Open Activity</string>
+        <string name="app_notification_txt">App Notification</string>
+        <string name="my_app_txt">My app</string>
 
 </resources>

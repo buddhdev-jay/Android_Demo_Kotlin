@@ -1,13 +1,18 @@
 package com.example.android_demo_kotlin
 
+import android.R.attr
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.os.Parcelable
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android_demo_kotlin.differentLayout.LayoutActivity
+import kotlinx.android.synthetic.main.activity_intent.btn_pending_intent
+import kotlinx.android.synthetic.main.activity_main.btn_bottomnavigation
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_listview
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_fragments
@@ -15,12 +20,14 @@ import kotlinx.android.synthetic.main.activity_main.btn_intent
 import kotlinx.android.synthetic.main.activity_main.btn_kotlin_basic
 import kotlinx.android.synthetic.main.activity_main.btn_layouts
 import kotlinx.android.synthetic.main.activity_main.btn_listview
+import kotlinx.android.synthetic.main.activity_main.btn_navgraph
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview_grid
 import kotlinx.android.synthetic.main.activity_main.btn_ui_element
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_one
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_two
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var TAG : String
@@ -30,6 +37,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         TAG = getString(R.string.mainactivity_log_tag)
         Log.d(TAG, "Oncreate Called")
+        (intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM) as? Uri)?.let{
+            val intent = Intent(applicationContext, BottomNavigationActivity::class.java)
+            intent.putExtra(getString(R.string.key_intent),it)
+            startActivity(intent)
+        }
         btn_kotlin_basic.setOnClickListener {
             intent = Intent(applicationContext, Kotlin_Basic::class.java)
             startActivity(intent)
@@ -75,15 +87,24 @@ class MainActivity : AppCompatActivity() {
             intent = Intent(applicationContext, ExpandableListviewActivity::class.java)
             startActivity(intent)
         }
+        btn_bottomnavigation.setOnClickListener {
+            intent = Intent(applicationContext, BottomNavigationActivity::class.java)
+            startActivity(intent)
+        }
         btn_fragments.setOnClickListener {
-            intent = Intent(applicationContext,FragmentActivity::class.java)
+            intent = Intent(applicationContext, FragmentActivity::class.java)
             startActivity(intent)
         }
         btn_intent.setOnClickListener {
             intent = Intent(applicationContext, IntentActivity::class.java)
             resultLauncher.launch(intent)
         }
+        btn_navgraph.setOnClickListener {
+            intent = Intent(applicationContext, NavgraphActivity::class.java)
+            startActivity(intent)
+        }
     }
+
     var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == Activity.RESULT_OK) {
             Toast.makeText(this, result.data?.getStringExtra(getString(R.string.txt_data_name)), Toast.LENGTH_SHORT).show()

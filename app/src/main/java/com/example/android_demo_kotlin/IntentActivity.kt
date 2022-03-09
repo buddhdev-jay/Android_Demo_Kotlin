@@ -27,5 +27,9 @@ class IntentActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK,intent)
             finish()
         }
+        btn_pending_intent.setOnClickListener {
+            intent = Intent(applicationContext, PendingActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
