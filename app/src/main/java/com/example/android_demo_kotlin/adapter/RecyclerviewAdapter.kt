@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.Filter
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,10 @@ import com.example.android_demo_kotlin.model.People
 class RecyclerviewAdapter(private var peopleList: ArrayList<People>, private val itemClickCallBack: (Any) -> Unit) :
     RecyclerView.Adapter<RecyclerviewAdapter.RecyclerviewViewHolder>() {
     private var context: Context? = null
+    var peopleFilterList = ArrayList<People>()
+    init {
+        peopleFilterList = peopleList
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerviewViewHolder {
         context = parent.context
@@ -22,7 +27,7 @@ class RecyclerviewAdapter(private var peopleList: ArrayList<People>, private val
     }
 
     override fun onBindViewHolder(holder: RecyclerviewViewHolder, position: Int) {
-        val person = peopleList[position]
+        val person = peopleFilterList[position]
         holder.apply {
             setIsRecyclable(false)
             imgView?.setImageResource(person.image)
@@ -38,7 +43,27 @@ class RecyclerviewAdapter(private var peopleList: ArrayList<People>, private val
     }
 
     override fun getItemCount(): Int {
-        return peopleList.count()
+        return peopleFilterList.size
+    }
+     fun getFilter(): Filter {
+        return object : Filter(){
+            override fun performFiltering(char: CharSequence?): FilterResults {
+                var character = char.toString()
+                peopleFilterList = if(character.isEmpty()){
+                    peopleList
+                } else {
+                    peopleList.filter { it.name.lowercase().contains(character.lowercase()) } as ArrayList<People>
+                }
+                val filterResults = FilterResults()
+                filterResults.values = peopleFilterList
+                return  filterResults
+            }
+
+            override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
+                peopleFilterList =p1?.values as ArrayList<People>
+                notifyDataSetChanged()
+            }
+        }
     }
 
     class RecyclerviewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
