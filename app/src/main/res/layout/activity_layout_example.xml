@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayoutExampleActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtview_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/teal_200"
+            android:text="jkahfhjsfhjswghfschhjsfghjkzhjkfhsjksfhsjkfhsfhsfh"
+            app:layout_constraintEnd_toStartOf="@id/txtview_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtview_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/purple_200"
+            android:text="jkahfhjsfhswghfschhjsfghhjsgshjfgjkzhjkfhsjksfhsjkfhsfhsfh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtview_one"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_blue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="25dp"
+        android:text="show hide blue"
+        app:layout_constraintEnd_toStartOf="@id/btn_red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtview_one" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_red"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="25dp"
+        android:text="show hide red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_blue"
+        app:layout_constraintTop_toBottomOf="@id/txtview_one" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

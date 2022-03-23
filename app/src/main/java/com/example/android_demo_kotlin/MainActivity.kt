@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_main.btn_expandable_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_fragments
 import kotlinx.android.synthetic.main.activity_main.btn_intent
 import kotlinx.android.synthetic.main.activity_main.btn_kotlin_basic
+import kotlinx.android.synthetic.main.activity_main.btn_layout_example
 import kotlinx.android.synthetic.main.activity_main.btn_layouts
 import kotlinx.android.synthetic.main.activity_main.btn_listview
 import kotlinx.android.synthetic.main.activity_main.btn_navgraph
@@ -101,6 +102,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_navgraph.setOnClickListener {
             intent = Intent(applicationContext, NavgraphActivity::class.java)
+            startActivity(intent)
+        }
+        btn_layout_example.setOnClickListener {
+            intent = Intent(applicationContext, LayoutExampleActivity::class.java)
             startActivity(intent)
         }
     }
