@@ -95,9 +95,9 @@
         <string name="fragment_count">FragmentCountLog</string>
         <string name="mainactivity_log_tag">MainActivityLog</string>
         <string name="activity_log_tag">ActivitytwoLog</string>
-        <string name="google_url">https://www.google.com/</string>
         <string name="txt_data_name">Txt data</string>
         <string name="name_key_intent">name</string>
+        <string name="lbl_bottomNavigation_activity">Bottomnavigation Activity</string>
         <string name="lbl_fragment_activity">Fragment Activity</string>
         <string name="lbl_intent_activity">Intent Activity</string>
         <string name="lbl_expandablelistview_sctivity">ExpandableListview Activity</string>
@@ -128,5 +128,9 @@
         <string name="open_app_title">Open Activity</string>
         <string name="app_notification_txt">App Notification</string>
         <string name="my_app_txt">My app</string>
+        <string name="btn_login_txt">Login</string>
+        <string name="btn_sign_up_txt">Sign up</string>
+        <string name="btn_txt_webview">WebView</string>
+        <string name="hint_searchbar">Search here</string>
 
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ import com.example.android_demo_kotlin.R
 class GalleryFragment : Fragment() {
     var imgView: ImageView? = null
     lateinit var btn_choose: Button
-    
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_gallery, container, false)
     }
@@ -27,14 +28,8 @@ class GalleryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         imgView = view.findViewById(R.id.fragment_imgview)
         btn_choose = view.findViewById(R.id.fragment_btn_choose_image)
-        val uri = arguments?.getString(getString(R.string.key_intent))?.toUri()
-        imgView?.setImageURI(uri)
-        val receiverdIntent = activity?.intent
-        if (activity?.intent?.action == Intent.ACTION_SEND) {
-            if(receiverdIntent?.type?.startsWith(getString(R.string.image_receive_type))== true){
-                imgView?.setImageURI(receiverdIntent?.getParcelableExtra(Intent.EXTRA_TEXT))
-            }
-        }
+        val uri = arguments?.getParcelable<Parcelable>(getString(R.string.key_intent))
+        imgView?.setImageURI(uri as Uri?)
         btn_choose.setOnClickListener {
             val intent = Intent()
             intent.apply {
@@ -45,12 +40,12 @@ class GalleryFragment : Fragment() {
         }
     }
 
-    private var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            val selectedImageUri: Uri? = result.data?.data
-            selectedImageUri.let {
-                imgView?.setImageURI(selectedImageUri)
+    private var resultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                    result.data?.data.let {
+                    imgView?.setImageURI(result.data?.data)
+                }
             }
         }
-    }
 }

@@ -27,6 +27,8 @@ import kotlinx.android.synthetic.main.activity_main.btn_ui_element
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_one
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_two
+import kotlinx.android.synthetic.main.activity_main.btn_webview
+import kotlinx.android.synthetic.main.activity_webview.btn_login_webview
 
 
 class MainActivity : AppCompatActivity() {
@@ -101,6 +103,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_navgraph.setOnClickListener {
             intent = Intent(applicationContext, NavgraphActivity::class.java)
+            startActivity(intent)
+        }
+       btn_webview.setOnClickListener {
+            intent = Intent(applicationContext, WebviewActivity::class.java)
             startActivity(intent)
         }
     }

@@ -1,7 +1,10 @@
 package com.example.android_demo_kotlin
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.android_demo_kotlin.fragments.AddMessageFragment
@@ -21,10 +24,10 @@ class BottomNavigationActivity : AppCompatActivity(),Communicator {
         bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         supportFragmentManager.beginTransaction().add(R.id.fragment_container_bottomnavigation,galleryFragment).commit()
         setBottomNavigation()
-        val str = intent.getStringExtra(getString(R.string.key_intent))
+        val str = intent.getParcelableExtra<Parcelable>(getString(R.string.key_intent))
         intent.getStringExtra(getString(R.string.key_intent)).let {
             val bundle = Bundle()
-            bundle.putString(getString(R.string.key_intent),str)
+            bundle.putParcelable(getString(R.string.key_intent),str)
             galleryFragment.arguments = bundle
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container_bottomnavigation,galleryFragment).commit()
         }
