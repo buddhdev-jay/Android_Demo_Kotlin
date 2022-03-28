@@ -54,4 +54,14 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     //noinspection GradleCompatible
     implementation 'com.android.support:design:25.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //OkHttp
+    implementation 'com.localebro:okhttpprofiler:1.0.8'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
 }
