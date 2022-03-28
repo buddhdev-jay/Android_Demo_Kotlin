@@ -157,5 +157,9 @@
     <string name="enter_valid_email">Please enter A valid Email</string>
     <string name="enter_password">Please enter Password</string>
     <string name="login_success">login Successful</string>
+    <string name="toast_api_error">Error in getting data from api.</string>
+    <string name="edi_txt_enter_txt_tosearch">enter to search here</string>
+    <string name="btn_txt_search">Search</string>
+    <string name="btn_txt_mvvm">MVVM</string>
 
 </resources>
