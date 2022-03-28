@@ -1,10 +1,10 @@
-package com.example.android_demo_kotlin.MVVM.viewmodels
+package com.example.android_demo_kotlin.mvvm.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android_demo_kotlin.MVVM.Retrofit.RetroInstance
-import com.example.android_demo_kotlin.MVVM.Retrofit.RetroService
-import com.example.android_demo_kotlin.MVVM.data.RecyclerList
+import com.example.android_demo_kotlin.mvvm.Retrofit.RetroInstance
+import com.example.android_demo_kotlin.mvvm.Retrofit.RetroService
+import com.example.android_demo_kotlin.mvvm.data.RecyclerList
 import retrofit2.Call
 import retrofit2.Response
 

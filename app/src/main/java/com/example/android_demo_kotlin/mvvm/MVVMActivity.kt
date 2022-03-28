@@ -1,13 +1,13 @@
-package com.example.android_demo_kotlin.MVVM
+package com.example.android_demo_kotlin.mvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.example.android_demo_kotlin.MVVM.data.RecyclerList
-import com.example.android_demo_kotlin.MVVM.viewmodels.RecyclerActivityViewModel
-import com.example.android_demo_kotlin.MVVM.viewmodels.RecyclerviewMVVMAdapter
+import com.example.android_demo_kotlin.mvvm.data.RecyclerList
+import com.example.android_demo_kotlin.mvvm.viewmodels.RecyclerActivityViewModel
+import com.example.android_demo_kotlin.mvvm.viewmodels.RecyclerviewMVVMAdapter
 import com.example.android_demo_kotlin.R
 import kotlinx.android.synthetic.main.activity_mvvmactivity.recycler_view_mvvm
 import kotlinx.android.synthetic.main.activity_mvvmactivity.search_btn

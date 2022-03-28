@@ -161,5 +161,7 @@
     <string name="edi_txt_enter_txt_tosearch">enter to search here</string>
     <string name="btn_txt_search">Search</string>
     <string name="btn_txt_mvvm">MVVM</string>
+    <string name="btn_txt_adapter_binding">Adapter Binding</string>
+    <string name="adapter_binding_url">https://www.apple.com/newsroom/images/product/iphone/standard/Apple-iPhone13-Pro-color-lineup-220308_big_carousel.jpg.slideshow-xlarge.jpg</string>
 
 </resources>
