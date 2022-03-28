@@ -5,6 +5,7 @@ const val SIZE_LIST_ZERO = 0
 const val TWO = 2
 const val ONE = 1
 const val THREE = 3
+const val MINUS_ONE = -1
 const val THREE_THOUSAND = 3000
 const val GET = "GET"
 const val APPLICATION_DATA_TYPE = "application/json"

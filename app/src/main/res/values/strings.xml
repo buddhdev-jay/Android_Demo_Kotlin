@@ -146,8 +146,16 @@
     <string name="json_content_type">Content-Type</string>
     <string name="content_type_json">application/json</string>
     <string name="enter_job_toast">Enter Job Name</string>
+    <string name="btn_txt_mvp">MVP</string>
+    <string name="btn_txt_mvc">MVC</string>
+    <string name="btn_txt_create_user">Create User</string>
     <string name="sharedpref_name">sharedPrefLogin</string>
     <string name="login_state">lockedState</string>
-    <string name="btn_txt_create_user">Create User</string>
+    <string name="btn_txt_mvc_login">Login</string>
+    <string name="hint_job">Job</string>
+    <string name="enter_email">Please enter Email</string>
+    <string name="enter_valid_email">Please enter A valid Email</string>
+    <string name="enter_password">Please enter Password</string>
+    <string name="login_success">login Successful</string>
 
 </resources>
