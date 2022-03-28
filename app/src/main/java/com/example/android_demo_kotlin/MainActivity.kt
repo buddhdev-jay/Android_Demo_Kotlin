@@ -1,6 +1,5 @@
 package com.example.android_demo_kotlin
 
-import android.R.attr
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -10,25 +9,35 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_demo_kotlin.databinding.DataBindingActivity
+import com.example.android_demo_kotlin.MVC.MVCActivity
+import com.example.android_demo_kotlin.MVP.MVPActivity
+import com.example.android_demo_kotlin.mvvm.MVVMActivity
+import com.example.android_demo_kotlin.WebServices.RecyclerWebActivity
+import com.example.android_demo_kotlin.databinding.TempActivity
 import com.example.android_demo_kotlin.differentLayout.LayoutActivity
-import kotlinx.android.synthetic.main.activity_intent.btn_pending_intent
 import kotlinx.android.synthetic.main.activity_main.btn_bottomnavigation
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_listview
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_fragments
 import kotlinx.android.synthetic.main.activity_main.btn_intent
+import kotlinx.android.synthetic.main.activity_main.btn_inversebinding
 import kotlinx.android.synthetic.main.activity_main.btn_kotlin_basic
 import kotlinx.android.synthetic.main.activity_main.btn_layouts
 import kotlinx.android.synthetic.main.activity_main.btn_listview
+import kotlinx.android.synthetic.main.activity_main.btn_mvc
+import kotlinx.android.synthetic.main.activity_main.btn_mvp
+import kotlinx.android.synthetic.main.activity_main.btn_mvvm
 import kotlinx.android.synthetic.main.activity_main.btn_navgraph
+import kotlinx.android.synthetic.main.activity_main.btn_recycler_api
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview_grid
+import kotlinx.android.synthetic.main.activity_main.btn_temprecyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_ui_element
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_one
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_two
 import kotlinx.android.synthetic.main.activity_main.btn_webview
-import kotlinx.android.synthetic.main.activity_webview.btn_login_webview
 
 
 class MainActivity : AppCompatActivity() {
@@ -107,6 +116,30 @@ class MainActivity : AppCompatActivity() {
         }
        btn_webview.setOnClickListener {
             intent = Intent(applicationContext, WebviewActivity::class.java)
+            startActivity(intent)
+        }
+        btn_recycler_api.setOnClickListener {
+            intent = Intent(applicationContext, RecyclerWebActivity::class.java)
+            startActivity(intent)
+        }
+        btn_mvp.setOnClickListener {
+            intent = Intent(applicationContext,MVPActivity::class.java)
+            startActivity(intent)
+        }
+        btn_mvc.setOnClickListener {
+            intent = Intent(applicationContext,MVCActivity::class.java)
+            startActivity(intent)
+        }
+        btn_mvvm.setOnClickListener {
+            intent = Intent(applicationContext,MVVMActivity::class.java)
+            startActivity(intent)
+        }
+        btn_inversebinding.setOnClickListener {
+            intent = Intent(applicationContext,DataBindingActivity::class.java)
+            startActivity(intent)
+        }
+        btn_temprecyclerview.setOnClickListener {
+            intent = Intent(applicationContext,TempActivity::class.java)
             startActivity(intent)
         }
     }
