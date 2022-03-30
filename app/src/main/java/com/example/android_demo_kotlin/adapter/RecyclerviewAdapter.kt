@@ -51,7 +51,7 @@ class RecyclerviewAdapter(private var peopleList: ArrayList<People>, private val
                 var character = char.toString()
                 peopleFilterList = if(character.isEmpty()){
                     peopleList
-                } else {
+                }else{
                     peopleList.filter { it.name.lowercase().contains(character.lowercase()) } as ArrayList<People>
                 }
                 val filterResults = FilterResults()

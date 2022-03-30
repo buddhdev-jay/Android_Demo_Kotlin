@@ -12,6 +12,9 @@ const val APPICATION_ACCEPT = "Accept"
 const val BASE_URL = "https://reqres.in/"
 const val GOOGLE_URL = "https://www.google.com/"
 const val USER_LIST_API = "api/users?page=2"
+const val USERID_KEY= "UserId"
+const val GET_USER_API_LINK = "/api/users/{id}"
+const val ADD_USER_API_LINK = "/api/users"
 const val RESPONSE_CODE_SUCESS = 200
 const val RESPONSE_CODE_FAIL = 400
 const val GOOGLE_SIGNUP = "<![CDATA[https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin]]>"

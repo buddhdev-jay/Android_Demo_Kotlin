@@ -13,6 +13,7 @@ import com.example.android_demo_kotlin.utils.APPICATION_ACCEPT
 import com.example.android_demo_kotlin.utils.APPLICATION_DATA_TYPE
 import com.example.android_demo_kotlin.utils.BASE_URL
 import com.example.android_demo_kotlin.utils.GET
+import com.example.android_demo_kotlin.utils.USERID_KEY
 import com.example.android_demo_kotlin.utils.USER_LIST_API
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonParser
@@ -35,6 +36,10 @@ class RecyclerWebActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler_web)
         recyclerview_progressbar.visibility = View.VISIBLE
+        floating_btn_add.setOnClickListener {
+            val intent = Intent(this, CreateUserActivity::class.java)
+            startActivity(intent)
+        }
         getMethod()
     }
 
@@ -69,7 +74,11 @@ class RecyclerWebActivity : AppCompatActivity() {
         for (user in personData.usersList) {
             usersArray.add(user)
         }
-        val adapter = RecyclerviewApiAdapter(this, usersArray) {}
+        val adapter = RecyclerviewApiAdapter(this, usersArray) {
+            val intent = Intent(this, SingleUserActivity::class.java)
+            intent.putExtra(USERID_KEY, it.toString())
+            startActivity(intent)
+        }
         recylerview_web.adapter = adapter
     }
 }
