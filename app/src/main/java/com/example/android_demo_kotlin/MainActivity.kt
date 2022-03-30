@@ -10,6 +10,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_demo_kotlin.MVP.MVPActivity
 import com.example.android_demo_kotlin.WebServices.RecyclerWebActivity
 import com.example.android_demo_kotlin.differentLayout.LayoutActivity
 import kotlinx.android.synthetic.main.activity_intent.btn_pending_intent
@@ -21,6 +22,7 @@ import kotlinx.android.synthetic.main.activity_main.btn_intent
 import kotlinx.android.synthetic.main.activity_main.btn_kotlin_basic
 import kotlinx.android.synthetic.main.activity_main.btn_layouts
 import kotlinx.android.synthetic.main.activity_main.btn_listview
+import kotlinx.android.synthetic.main.activity_main.btn_mvp
 import kotlinx.android.synthetic.main.activity_main.btn_navgraph
 import kotlinx.android.synthetic.main.activity_main.btn_recycler_api
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview
@@ -113,6 +115,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_recycler_api.setOnClickListener {
             intent = Intent(applicationContext, RecyclerWebActivity::class.java)
+            startActivity(intent)
+        }
+        btn_mvp.setOnClickListener {
+            intent = Intent(applicationContext,MVPActivity::class.java)
             startActivity(intent)
         }
     }

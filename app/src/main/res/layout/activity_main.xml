@@ -212,5 +212,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_navgraph" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mvp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="@string/btn_txt_mvp"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_recycler_api" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
