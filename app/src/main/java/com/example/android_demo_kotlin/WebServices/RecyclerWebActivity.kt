@@ -1,0 +1,75 @@
+package com.example.android_demo_kotlin.WebServices
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.view.View
+import com.example.android_demo_kotlin.R
+import com.example.android_demo_kotlin.adapter.RecyclerviewApiAdapter
+import com.example.android_demo_kotlin.model.PersonList
+import com.example.android_demo_kotlin.model.PersonWeb
+import com.example.android_demo_kotlin.utils.APPICATION_ACCEPT
+import com.example.android_demo_kotlin.utils.APPLICATION_DATA_TYPE
+import com.example.android_demo_kotlin.utils.BASE_URL
+import com.example.android_demo_kotlin.utils.GET
+import com.example.android_demo_kotlin.utils.USER_LIST_API
+import com.google.gson.GsonBuilder
+import com.google.gson.JsonParser
+import java.net.HttpURLConnection
+import java.net.URL
+import kotlinx.android.synthetic.main.activity_recycler_web.floating_btn_add
+import kotlinx.android.synthetic.main.activity_recycler_web.recyclerview_progressbar
+import kotlinx.android.synthetic.main.activity_recycler_web.recylerview_web
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+
+class RecyclerWebActivity : AppCompatActivity() {
+
+    private lateinit var personData: PersonWeb
+    private lateinit var usersArray: ArrayList<PersonList>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_recycler_web)
+        recyclerview_progressbar.visibility = View.VISIBLE
+        getMethod()
+    }
+
+    private fun getMethod() {
+        GlobalScope.launch(Dispatchers.IO) {
+            val url = URL(BASE_URL + USER_LIST_API)
+            val httpURLConnection = url.openConnection() as HttpURLConnection
+            httpURLConnection.apply {
+                setRequestProperty(APPICATION_ACCEPT, APPLICATION_DATA_TYPE)
+                requestMethod = GET
+                doInput = true
+                doOutput = false
+            }
+            val responseCode = httpURLConnection.responseCode
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                val response = httpURLConnection.inputStream.bufferedReader().use { it.readText() }
+                withContext(Dispatchers.Main) {
+                    val gson = GsonBuilder().setPrettyPrinting().create()
+                    val prettyJson = gson.toJson(JsonParser.parseString(response))
+                    personData = gson.fromJson(prettyJson, PersonWeb::class.java)
+                    recyclerview_progressbar.visibility = View.GONE
+                    setAdapter()
+                }
+            } else {
+                Log.e("HTTPURLCONNECTION_ERROR", responseCode.toString())
+            }
+        }
+    }
+
+    private fun setAdapter() {
+        usersArray = arrayListOf()
+        for (user in personData.usersList) {
+            usersArray.add(user)
+        }
+        val adapter = RecyclerviewApiAdapter(this, usersArray) {}
+        recylerview_web.adapter = adapter
+    }
+}
