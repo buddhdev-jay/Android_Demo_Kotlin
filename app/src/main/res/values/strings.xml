@@ -147,5 +147,6 @@
     <string name="content_type_json">application/json</string>
     <string name="enter_job_toast">Enter Job Name</string>
     <string name="btn_txt_mvp">MVP</string>
+    <string name="btn_txt_mvc">MVC</string>
 
 </resources>
