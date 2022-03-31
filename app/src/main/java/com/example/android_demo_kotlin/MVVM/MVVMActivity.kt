@@ -3,6 +3,7 @@ package com.example.android_demo_kotlin.MVVM
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.android_demo_kotlin.MVVM.data.RecyclerList
 import com.example.android_demo_kotlin.MVVM.viewmodels.RecyclerActivityViewModel
@@ -16,7 +17,7 @@ import retrofit2.Response
 
 class MVVMActivity : AppCompatActivity() {
 
-    val recyclerViewModel = RecyclerActivityViewModel()
+    val recyclerViewModel : RecyclerActivityViewModel by viewModels()
     lateinit var recyclerViewAdapter: RecyclerviewMVVMAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
