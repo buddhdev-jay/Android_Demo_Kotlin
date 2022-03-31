@@ -1,10 +1,10 @@
-package com.example.android_demo_kotlin.MVVM.viewmodels
+package com.example.android_demo_kotlin.mvvm.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.android_demo_kotlin.MVVM.Retrofit.RetroInstance
-import com.example.android_demo_kotlin.MVVM.Retrofit.RetroService
-import com.example.android_demo_kotlin.MVVM.data.RecyclerList
+import com.example.android_demo_kotlin.mvvm.Retrofit.RetroInstance
+import com.example.android_demo_kotlin.mvvm.Retrofit.RetroService
+import com.example.android_demo_kotlin.mvvm.data.RecyclerList
 import retrofit2.Call
 import retrofit2.Response
 
@@ -24,8 +24,6 @@ class RecyclerActivityViewModel:ViewModel() {
         call.enqueue(object : retrofit2.Callback<RecyclerList>{
             override fun onResponse(call: Call<RecyclerList>, response: Response<RecyclerList>) {
                 if(response.isSuccessful) {
-                    //recyclerViewAdapter.setListData(response.body()?.items!!)
-                    //recyclerViewAdapter.notifyDataSetChanged()
                     recyclerListData.postValue(response.body())
                 } else {
                     recyclerListData.postValue(null)
@@ -34,7 +32,6 @@ class RecyclerActivityViewModel:ViewModel() {
 
             override fun onFailure(call: Call<RecyclerList>, t: Throwable) {
                 // Toast.makeText(this@RecyclerViewActivity, "Error in getting data from api.", Toast.LENGTH_LONG).show()
-
                 recyclerListData.postValue(null)
             }
         })

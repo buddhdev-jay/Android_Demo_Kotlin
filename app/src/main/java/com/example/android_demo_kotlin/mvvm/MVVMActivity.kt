@@ -1,27 +1,29 @@
-package com.example.android_demo_kotlin.MVVM
+package com.example.android_demo_kotlin.mvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.example.android_demo_kotlin.MVVM.data.RecyclerList
-import com.example.android_demo_kotlin.MVVM.viewmodels.RecyclerActivityViewModel
-import com.example.android_demo_kotlin.MVVM.viewmodels.RecyclerviewMVVMAdapter
+import com.example.android_demo_kotlin.mvvm.data.RecyclerList
+import com.example.android_demo_kotlin.mvvm.viewmodels.RecyclerActivityViewModel
+import com.example.android_demo_kotlin.mvvm.viewmodels.RecyclerviewMVVMAdapter
 import com.example.android_demo_kotlin.R
+import com.example.android_demo_kotlin.databinding.ActivityMvvmactivityBinding
 import kotlinx.android.synthetic.main.activity_mvvmactivity.recycler_view_MVVM
-import kotlinx.android.synthetic.main.activity_mvvmactivity.searchBoxId
-import kotlinx.android.synthetic.main.activity_mvvmactivity.searchButton
-import retrofit2.Call
-import retrofit2.Response
 
 class MVVMActivity : AppCompatActivity() {
 
-    val recyclerViewModel : RecyclerActivityViewModel by viewModels()
+    lateinit var binding: ActivityMvvmactivityBinding
+    val recyclerViewModel: RecyclerActivityViewModel by viewModels()
     lateinit var recyclerViewAdapter: RecyclerviewMVVMAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mvvmactivity)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_mvvmactivity)
+        binding.mainviewModel = recyclerViewModel
+        binding.lifecycleOwner = this
         initRecyclerView()
         createData()
     }
@@ -34,11 +36,7 @@ class MVVMActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Error in getting data from api.", Toast.LENGTH_LONG).show()
             }
-
         })
-        searchButton.setOnClickListener {
-            recyclerViewModel.makeApiCall(searchBoxId.text.toString())
-        }
     }
 
     private fun initRecyclerView() {
