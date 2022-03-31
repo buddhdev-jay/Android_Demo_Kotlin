@@ -15,6 +15,9 @@
             android:name=".MVC.MVCActivity"
             android:exported="false" />
         <activity
+            android:name=".MVVM.MVVMActivity"
+            android:exported="false" />
+        <activity
             android:name=".MVP.MVPActivity"
             android:exported="false" />
         <activity
