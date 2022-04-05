@@ -9,6 +9,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_demo_kotlin.databinding.DataBindingActivity
 import com.example.android_demo_kotlin.MVC.MVCActivity
 import com.example.android_demo_kotlin.MVP.MVPActivity
 import com.example.android_demo_kotlin.mvvm.MVVMActivity
@@ -19,6 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.btn_expandable_listview
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_fragments
 import kotlinx.android.synthetic.main.activity_main.btn_intent
+import kotlinx.android.synthetic.main.activity_main.btn_inversebinding
 import kotlinx.android.synthetic.main.activity_main.btn_kotlin_basic
 import kotlinx.android.synthetic.main.activity_main.btn_layouts
 import kotlinx.android.synthetic.main.activity_main.btn_listview
@@ -128,6 +130,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_mvvm.setOnClickListener {
             intent = Intent(applicationContext,MVVMActivity::class.java)
+            startActivity(intent)
+        }
+        btn_inversebinding.setOnClickListener {
+            intent = Intent(applicationContext,DataBindingActivity::class.java)
             startActivity(intent)
         }
     }

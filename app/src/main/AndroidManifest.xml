@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
-            android:name=".DataBinding.DataBindingActivity"
+            android:name=".databinding.DataBindingActivity"
             android:exported="false" />
         <activity
             android:name=".MVC.MVCActivity"
