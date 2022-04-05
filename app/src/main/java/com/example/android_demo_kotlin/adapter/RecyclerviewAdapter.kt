@@ -63,6 +63,7 @@ class RecyclerviewAdapter(private var peopleList: ArrayList<People>, private val
                 peopleFilterList =p1?.values as ArrayList<People>
                 notifyDataSetChanged()
             }
+
         }
     }
 

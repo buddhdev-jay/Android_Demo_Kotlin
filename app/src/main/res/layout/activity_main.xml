@@ -189,7 +189,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_intent" />
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_webview"
             android:layout_width="match_parent"
@@ -202,5 +201,16 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_navgraph" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_recycler_api"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="@string/btn_recyclerview_api_call"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_navgraph" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
