@@ -12,24 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".databinding.DataBindingActivity">
-    <EditText
-        android:id="@+id/editxt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="ghjj"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-    <TextView
-        android:id="@+id/txtview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@{viewModels.getstring(editxt.getText().toString())}"/>
+
     <EditText
         android:id="@+id/editxt_name"
         android:layout_width="match_parent"
@@ -51,6 +34,34 @@
             android:layout_marginTop="25dp"
             android:text="@={viewModels.name}"
             />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_txt_email_data_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_twoway"
+        android:layout_margin="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@={viewModels.email}" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edit_txt_password_data_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_txt_email_data_binding"
+        android:layout_margin="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Pass Word"
+        android:text="@={viewModels.password}"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edit_txt_password_data_binding"
+        android:layout_margin="30dp"
+        android:text="Login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="@{()->viewModels.performValidation()}"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
