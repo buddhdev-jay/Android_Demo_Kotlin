@@ -5,41 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mainviewModel"
             type="com.example.android_demo_kotlin.mvvm.viewmodels.RecyclerActivityViewModel" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".mvvm.MVVMActivity">
-
-    <EditText android:id="@+id/searchBoxId"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:hint="enter to search here"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        />
+        android:layout_height="match_parent"
+        tools:context=".mvvm.MVVMActivity">
 
-    <Button android:id="@+id/searchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@+id/searchBoxId"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="@{()->mainviewModel.makeApiCall(searchBoxId.getText().toString())}"
-        />
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view_MVVM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/searchButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/searchBoxId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:hint="enter to search here"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->mainviewModel.makeApiCall(searchBoxId.getText().toString())}"
+            android:text="Search"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchBoxId" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_MVVM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
