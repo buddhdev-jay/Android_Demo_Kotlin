@@ -148,5 +148,6 @@
     <string name="enter_job_toast">Enter Job Name</string>
     <string name="sharedpref_name">sharedPrefLogin</string>
     <string name="login_state">lockedState</string>
+    <string name="btn_txt_create_user">Create User</string>
 
 </resources>
