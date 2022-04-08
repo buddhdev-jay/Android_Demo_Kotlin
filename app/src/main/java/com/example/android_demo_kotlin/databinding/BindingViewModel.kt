@@ -4,6 +4,7 @@ import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
@@ -20,6 +21,7 @@ class BindingViewModel : ViewModel() {
 
     var email: String = ""
     var password: String = ""
+    var uppercase = MutableLiveData<String>()
 
     private val logInResult = MutableLiveData<String>()
 
@@ -36,13 +38,9 @@ class BindingViewModel : ViewModel() {
         return intvalue
     }
 
-    @BindingAdapter("emailValidator")
-    fun emailValidator(editText: EditText, email: String?) {
-        if (TextUtils.isEmpty(email)) {
-            editText.error = "Please Enter Email"
-            return
-        }
-    }
+
+
+
 
     fun performValidation() {
         if (email.isBlank()) {
@@ -56,10 +54,6 @@ class BindingViewModel : ViewModel() {
         logInResult.value = "Valid credentials :)"
     }
 
-    @BindingAdapter(" android:hint")
-    fun setHintMessage(view: EditText, Message: String) {
-        view.hint = Message
-    }
 
     @BindingAdapter("android:textAttrChanged")
     fun setTextChangedListener(editText: EditText, listener: InverseBindingListener) {

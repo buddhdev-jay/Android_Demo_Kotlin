@@ -31,7 +31,6 @@ class RecyclerActivityViewModel:ViewModel() {
             }
 
             override fun onFailure(call: Call<RecyclerList>, t: Throwable) {
-                // Toast.makeText(this@RecyclerViewActivity, "Error in getting data from api.", Toast.LENGTH_LONG).show()
                 recyclerListData.postValue(null)
             }
         })

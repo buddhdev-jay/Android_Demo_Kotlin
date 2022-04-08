@@ -8,6 +8,7 @@
         <variable
             name="clickHandler"
             type="android.view.View.OnClickListener" />
+
         <variable
             name="viewModels"
             type="com.example.android_demo_kotlin.databinding.BindingViewModel" />
@@ -30,12 +31,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_name_twoway"
+            setText="@{viewModels.uppercase}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="@={viewModels.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/editxt_name" />
@@ -71,6 +72,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_txt_password_data_binding" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_txt_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_login_data_binding" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
