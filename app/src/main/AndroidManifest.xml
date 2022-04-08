@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".databinding.TempActivity"
+            android:exported="false" />
+        <activity
             android:name=".databinding.DataBindingActivity"
             android:exported="false" />
         <activity
