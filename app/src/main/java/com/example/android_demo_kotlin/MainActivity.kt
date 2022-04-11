@@ -14,6 +14,7 @@ import com.example.android_demo_kotlin.MVC.MVCActivity
 import com.example.android_demo_kotlin.MVP.MVPActivity
 import com.example.android_demo_kotlin.mvvm.MVVMActivity
 import com.example.android_demo_kotlin.WebServices.RecyclerWebActivity
+import com.example.android_demo_kotlin.databinding.TempActivity
 import com.example.android_demo_kotlin.differentLayout.LayoutActivity
 import kotlinx.android.synthetic.main.activity_main.btn_bottomnavigation
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_listview
@@ -31,6 +32,7 @@ import kotlinx.android.synthetic.main.activity_main.btn_navgraph
 import kotlinx.android.synthetic.main.activity_main.btn_recycler_api
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview_grid
+import kotlinx.android.synthetic.main.activity_main.btn_temprecyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_ui_element
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_one
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_recyclerview
@@ -134,6 +136,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_inversebinding.setOnClickListener {
             intent = Intent(applicationContext,DataBindingActivity::class.java)
+            startActivity(intent)
+        }
+        btn_temprecyclerview.setOnClickListener {
+            intent = Intent(applicationContext,TempActivity::class.java)
             startActivity(intent)
         }
     }

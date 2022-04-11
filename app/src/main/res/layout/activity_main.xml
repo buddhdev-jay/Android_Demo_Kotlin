@@ -258,5 +258,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_mvvm" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_temprecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="Temp recycelrview"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_inversebinding" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
