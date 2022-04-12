@@ -16,6 +16,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        setImageUrl="@{dataModel.imageurl}"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,6 +29,8 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:basePrice="@{dataModel.price}"
+        app:count="@{dataModel.count}"
         app:layout_constraintStart_toEndOf="@id/recylerview_img"
         app:layout_constraintTop_toTopOf="parent" />
 

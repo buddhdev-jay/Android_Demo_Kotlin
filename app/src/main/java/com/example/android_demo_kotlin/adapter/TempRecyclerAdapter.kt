@@ -16,14 +16,14 @@ import com.example.android_demo_kotlin.model.People
 class TempRecyclerAdapter(private var imageList: ArrayList<ImageUrlList>) :
     RecyclerView.Adapter<TempRecyclerAdapter.tempViewHolder>() {
     private var context: Context? = null
-
+    lateinit var binding : RecyclerviewItemLayoutBinding
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TempRecyclerAdapter.tempViewHolder {
         context = parent.context
-        val binding =  RecyclerviewItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        binding =  RecyclerviewItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
             return TempRecyclerAdapter.tempViewHolder(binding)
     }
     override fun onBindViewHolder(holder: tempViewHolder, position: Int) {
-        holder.bind(imageList[position])
+        binding.dataModel = imageList[position]
     }
 
     override fun getItemCount(): Int {
@@ -31,14 +31,6 @@ class TempRecyclerAdapter(private var imageList: ArrayList<ImageUrlList>) :
     }
 
     class tempViewHolder(val binding: RecyclerviewItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-
-
-        fun bind(item:ImageUrlList){
-            binding.txtviewNameRecyclerview.text = item.count.toString()
-        }
-        val imgView: ImageView? = itemView.findViewById(R.id.recylerview_img)
-        val txtname: TextView? = itemView.findViewById(R.id.txtview_name_recyclerview)
-        val checkbx: CheckBox? = itemView.findViewById(R.id.chcx_recylerview)
     }
 
 
