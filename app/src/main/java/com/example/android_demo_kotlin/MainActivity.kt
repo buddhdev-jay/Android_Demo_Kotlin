@@ -1,7 +1,9 @@
 package com.example.android_demo_kotlin
 
+import android.Manifest
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
@@ -9,6 +11,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.example.android_demo_kotlin.databinding.DataBindingActivity
 import com.example.android_demo_kotlin.MVC.MVCActivity
 import com.example.android_demo_kotlin.MVP.MVPActivity
@@ -42,12 +45,14 @@ import kotlinx.android.synthetic.main.activity_main.btn_webview
 
 class MainActivity : AppCompatActivity() {
     lateinit var TAG : String
-
+     val  REQUEST_CODE_BACKGROUND = 100
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         TAG = getString(R.string.mainactivity_log_tag)
+        requestPermission()
         Log.d(TAG, "Oncreate Called")
+
         (intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM) as? Uri)?.let{
             val intent = Intent(applicationContext, BottomNavigationActivity::class.java)
             intent.putExtra(getString(R.string.key_intent),it)
@@ -141,6 +146,19 @@ class MainActivity : AppCompatActivity() {
         btn_temprecyclerview.setOnClickListener {
             intent = Intent(applicationContext,TempActivity::class.java)
             startActivity(intent)
+        }
+    }
+    private fun requestPermission() {
+        val hasForegroundPermission = ActivityCompat.checkSelfPermission(this,
+            Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+
+        if (hasForegroundPermission) {
+            val hasBackgroundPermission = ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED
+        } else {
+            ActivityCompat.requestPermissions(this,
+                arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION), REQUEST_CODE_BACKGROUND)
         }
     }
 

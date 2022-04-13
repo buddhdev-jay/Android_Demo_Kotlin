@@ -37,6 +37,7 @@ class DataBindingActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 bindingViewModel.uppercase.value = binding.editTxtNumber.getUpdatedText()
+//                binding.editTxtNumber.updateText(bindingViewModel.uppercase.value.toString())
                 Log.e("Data", binding.editTxtNumber.getUpdatedText())
             }
 

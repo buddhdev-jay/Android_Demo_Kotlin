@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
 @BindingAdapter("setText")
-fun TextView.updateText(text: String?) {
-    this.text = text
+fun   EditText.updateText(camelcase: String?) {
+    this.setText(camelcase)
 }
 @BindingAdapter(value = ["basePrice","count"], requireAll = false)
 fun TextView.finalPrice(count: Int?,basePrice: Int?) {

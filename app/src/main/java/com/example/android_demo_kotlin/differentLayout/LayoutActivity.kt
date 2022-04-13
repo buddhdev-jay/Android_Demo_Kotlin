@@ -15,13 +15,14 @@ import kotlinx.android.synthetic.main.activity_layout.btn_linear_layout
 import kotlinx.android.synthetic.main.activity_layout.btn_relative_layout
 
 class LayoutActivity : AppCompatActivity() {
-    private val TAG = getString(R.string.activity_log_tag)
+   lateinit var TAG :String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_layout)
         val name = intent.getStringExtra(getString(R.string.name_key_intent))
         Toast.makeText(this,name,Toast.LENGTH_SHORT).show()
+        TAG =getString(R.string.activity_log_tag)
         btn_linear_layout.setOnClickListener {
             intent = Intent(applicationContext,LinearLayoutActivity::class.java)
             startActivity(intent)
