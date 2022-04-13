@@ -16,7 +16,6 @@ import com.example.android_demo_kotlin.utils.GET
 import com.example.android_demo_kotlin.utils.USERID_KEY
 import com.example.android_demo_kotlin.utils.USER_LIST_API
 import com.google.gson.GsonBuilder
-import com.google.gson.JsonParser
 import java.net.HttpURLConnection
 import java.net.URL
 import kotlinx.android.synthetic.main.activity_recycler_web.floating_btn_add
@@ -26,11 +25,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
 
 class RecyclerWebActivity : AppCompatActivity() {
 
     private lateinit var personData: PersonWeb
     private lateinit var usersArray: ArrayList<PersonList>
+    val userlist : ArrayList<PersonList> = ArrayList<PersonList>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +59,12 @@ class RecyclerWebActivity : AppCompatActivity() {
                 val response = httpURLConnection.inputStream.bufferedReader().use { it.readText() }
                 withContext(Dispatchers.Main) {
                     val gson = GsonBuilder().setPrettyPrinting().create()
-                    val prettyJson = gson.toJson(JsonParser.parseString(response))
-                    personData = gson.fromJson(prettyJson, PersonWeb::class.java)
+                    val jsonObject = JSONObject(response)
+                    val jsonArray = jsonObject.getJSONArray("data")
+
+                    for (position in 0..(jsonArray.length())-1){
+                        userlist.add(PersonList(email = jsonArray.getJSONObject(position).getString("email")))
+                    }
                     recyclerview_progressbar.visibility = View.GONE
                     setAdapter()
                 }
@@ -70,11 +75,7 @@ class RecyclerWebActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        usersArray = arrayListOf()
-        for (user in personData.usersList) {
-            usersArray.add(user)
-        }
-        val adapter = RecyclerviewApiAdapter(this, usersArray) {
+        val adapter = RecyclerviewApiAdapter(this,userlist) {
             val intent = Intent(this, SingleUserActivity::class.java)
             intent.putExtra(USERID_KEY, it.toString())
             startActivity(intent)
