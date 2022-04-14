@@ -189,6 +189,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_intent" />
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_webview"
             android:layout_width="match_parent"
@@ -212,5 +213,29 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_webview" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mvp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="@string/btn_txt_mvp"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_recycler_api" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mvc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/black"
+            android:text="@string/btn_txt_mvc"
+            android:textColor="@color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_mvp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".MVVM.MVVMActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MVC.MVCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MVP.MVPActivity"
+            android:exported="false" />
+        <activity
             android:name=".WebServices.CreateUserActivity"
             android:exported="false" />
         <activity
