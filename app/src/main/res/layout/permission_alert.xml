@@ -1,0 +1,78 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/rounded_view_light_gray">
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/id_title_tv"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="30dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:paddingTop="24dp"
+    android:textColor="@color/black"
+    android:background="@drawable/top_rounded_view_alert_title"
+    android:gravity="center"
+    android:textSize="18sp"/>
+
+<androidx.appcompat.widget.AppCompatTextView
+android:id="@+id/id_message_tv"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginBottom="30dp"
+android:paddingStart="24dp"
+android:paddingEnd="24dp"
+android:textColor="@color/black"
+android:gravity="start"
+android:textSize="18sp"/>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:animateLayoutChanges="true"
+android:weightSum="2"
+android:paddingStart="24dp"
+android:paddingEnd="24dp"
+android:paddingBottom="24dp"
+android:orientation="horizontal">
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/no_btn"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_weight="1"
+    android:textColor="@color/purple_200"
+    android:gravity="center"
+    android:textSize="16sp"
+    android:layout_marginEnd="16dp"
+    android:background="@drawable/dialog_yes_btn_bg"
+    android:textDirection="ltr"
+    android:layoutDirection="ltr"
+    android:text="yes "
+    android:textAllCaps="false"/>
+
+<androidx.appcompat.widget.AppCompatTextView
+    android:id="@+id/yes_btn"
+    android:layout_width="0dp"
+    android:layout_height="48dp"
+    android:layout_weight="1"
+    android:textColor="@color/white"
+    android:gravity="center"
+    android:textSize="16sp"
+    android:background="@drawable/dialog_no_btn_bg"
+    android:textDirection="ltr"
+    android:layoutDirection="ltr"
+    android:text="no don't"
+    android:textAllCaps="false"/>
+
+</LinearLayout>
+
+    </LinearLayout>

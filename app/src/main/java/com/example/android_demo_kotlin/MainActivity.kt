@@ -32,6 +32,7 @@ import kotlinx.android.synthetic.main.activity_main.btn_mvc
 import kotlinx.android.synthetic.main.activity_main.btn_mvp
 import kotlinx.android.synthetic.main.activity_main.btn_mvvm
 import kotlinx.android.synthetic.main.activity_main.btn_navgraph
+import kotlinx.android.synthetic.main.activity_main.btn_permission
 import kotlinx.android.synthetic.main.activity_main.btn_recycler_api
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview_grid
@@ -145,6 +146,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_temprecyclerview.setOnClickListener {
             intent = Intent(applicationContext,TempActivity::class.java)
+            startActivity(intent)
+        }
+        btn_permission.setOnClickListener {
+            intent = Intent(applicationContext,PermissionActivity::class.java)
             startActivity(intent)
         }
     }
