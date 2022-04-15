@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         TAG = getString(R.string.mainactivity_log_tag)
-        requestPermission()
+       // requestPermission()
         Log.d(TAG, "Oncreate Called")
 
         (intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM) as? Uri)?.let{
