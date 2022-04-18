@@ -2,6 +2,7 @@ package com.example.android_demo_kotlin
 
 import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.Manifest.permission.CAMERA
+import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,6 +12,8 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -95,7 +98,7 @@ class PermissionActivity : AppCompatActivity() {
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 val uri: Uri = Uri.fromParts(getString(R.string.package_keyword), packageName, null)
                 intent.data = uri
-                startActivity(intent)
+                resultLauncher.launch(intent)
             }
                 .setNegativeButton(getString(R.string.btn_text_cancel)) { dialog, whichButton ->
                     dialog.dismiss()
@@ -107,4 +110,14 @@ class PermissionActivity : AppCompatActivity() {
             show()
         }
     }
+
+    var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            Toast.makeText(this, result.data?.getStringExtra(getString(R.string.txt_data_name)), Toast.LENGTH_SHORT).show()
+        }
+        if (result.resultCode == Activity.RESULT_CANCELED){
+            Toast.makeText(this, "not", Toast.LENGTH_SHORT).show()
+        }
+        }
+
 }
