@@ -19,9 +19,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.ContextCompat
+import com.example.android_demo_kotlin.utils.ONE
+import com.example.android_demo_kotlin.utils.ZERO
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_permission.checkpermission
 import kotlinx.android.synthetic.main.activity_permission.requestpermission
+
 
 
 class PermissionActivity : AppCompatActivity() {
@@ -36,7 +39,7 @@ class PermissionActivity : AppCompatActivity() {
         checkpermission.setOnClickListener {
             view = it
             if (checkPermission()) {
-                Snackbar.make(view, getString(R.string.toast_permission_granted) , Snackbar.LENGTH_LONG).show();
+                Snackbar.make(view, getString(R.string.toast_permission_granted), Snackbar.LENGTH_LONG).show();
             } else {
                 Snackbar.make(view, getString(R.string.toast_request_permission), Snackbar.LENGTH_LONG).show();
             }
@@ -53,9 +56,9 @@ class PermissionActivity : AppCompatActivity() {
     }
 
     private fun checkPermission(): Boolean {
-        val result = ContextCompat.checkSelfPermission(applicationContext, ACCESS_FINE_LOCATION)
-        val result1 = ContextCompat.checkSelfPermission(applicationContext, CAMERA)
-        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED
+        val resultLocation = ContextCompat.checkSelfPermission(applicationContext, ACCESS_FINE_LOCATION)
+        val resultCamera = ContextCompat.checkSelfPermission(applicationContext, CAMERA)
+        return  resultLocation == PackageManager.PERMISSION_GRANTED && resultCamera == PackageManager.PERMISSION_GRANTED
     }
 
     private fun requestPermission() {
@@ -66,17 +69,17 @@ class PermissionActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             PERMISSION_REQUEST_CODE -> {
-                if (grantResults.size > 0) {
-                    if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                if (grantResults.size > ZERO) {
+                    if (grantResults[ZERO] == PackageManager.PERMISSION_GRANTED) {
                         Snackbar.make(view, getString(R.string.toast_permission_granted_location_data), Snackbar.LENGTH_LONG).show();
-                    } else if (grantResults[0] == PackageManager.PERMISSION_DENIED){
+                    } else if (grantResults[ZERO] == PackageManager.PERMISSION_DENIED) {
                         if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
                             popUpDialog()
                         }
                     }
-                    if (grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                    if (grantResults[ONE] == PackageManager.PERMISSION_GRANTED) {
                         Snackbar.make(view, getString(R.string.toast_permission_granted_camera), Snackbar.LENGTH_LONG).show();
-                    } else if (grantResults[1] == PackageManager.PERMISSION_DENIED){
+                    } else if (grantResults[ONE] == PackageManager.PERMISSION_DENIED) {
                         if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
                             popUpDialog()
                         }
@@ -84,40 +87,40 @@ class PermissionActivity : AppCompatActivity() {
                 }
 
             }
-
         }
     }
+
     private fun popUpDialog() {
         val builder = AlertDialog.Builder(this)
+        var alertDialog: AlertDialog? = null
         builder.apply {
             setTitle(getString(R.string.open_settings))
             setMessage(getString(R.string.grant_permission_settings))
             setIcon(android.R.drawable.ic_dialog_alert)
-            setPositiveButton(getString(R.string.btn_text_settings)) { _, _ ->
+            setPositiveButton(getString(R.string.btn_text_settings)) { dialog, _ ->
                 val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 val uri: Uri = Uri.fromParts(getString(R.string.package_keyword), packageName, null)
                 intent.data = uri
+                alertDialog?.dismiss()
                 resultLauncher.launch(intent)
-            }
-                .setNegativeButton(getString(R.string.btn_text_cancel)) { dialog, whichButton ->
+
+            }.setNegativeButton(getString(R.string.btn_text_cancel)) { dialog, whichButton ->
                     dialog.dismiss()
                 }
         }
-        val alertDialog: AlertDialog = builder.create()
+        alertDialog = builder.create()
         alertDialog.apply {
             setCancelable(true)
             show()
         }
+
     }
 
     var resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            Toast.makeText(this, result.data?.getStringExtra(getString(R.string.txt_data_name)), Toast.LENGTH_SHORT).show()
+            if (!checkPermission()) {
+                popUpDialog()
+            } else {
+                Toast.makeText(this, getString(R.string.toast_granted), Toast.LENGTH_SHORT).show()
+            }
         }
-        if (result.resultCode == Activity.RESULT_CANCELED){
-            Toast.makeText(this, "not", Toast.LENGTH_SHORT).show()
-        }
-        }
-
 }
