@@ -67,16 +67,14 @@ class PermissionActivity : AppCompatActivity() {
                     if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
                         Snackbar.make(view, getString(R.string.toast_permission_granted_location_data), Snackbar.LENGTH_LONG).show();
                     } else if (grantResults[0] == PackageManager.PERMISSION_DENIED){
-                        if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
-                        } else {
+                        if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
                             popUpDialog()
                         }
                     }
                     if (grantResults[1] == PackageManager.PERMISSION_GRANTED){
                         Snackbar.make(view, getString(R.string.toast_permission_granted_camera), Snackbar.LENGTH_LONG).show();
                     } else if (grantResults[1] == PackageManager.PERMISSION_DENIED){
-                        if (ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
-                        } else {
+                        if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permissions[0])) {
                             popUpDialog()
                         }
                     }
