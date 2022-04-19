@@ -19,7 +19,9 @@ import com.example.android_demo_kotlin.mvvm.MVVMActivity
 import com.example.android_demo_kotlin.WebServices.RecyclerWebActivity
 import com.example.android_demo_kotlin.databinding.TempActivity
 import com.example.android_demo_kotlin.differentLayout.LayoutActivity
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_main.btn_bottomnavigation
+import kotlinx.android.synthetic.main.activity_main.btn_coordinator
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_listview
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_fragments
@@ -32,6 +34,7 @@ import kotlinx.android.synthetic.main.activity_main.btn_mvc
 import kotlinx.android.synthetic.main.activity_main.btn_mvp
 import kotlinx.android.synthetic.main.activity_main.btn_mvvm
 import kotlinx.android.synthetic.main.activity_main.btn_navgraph
+import kotlinx.android.synthetic.main.activity_main.btn_navigationview
 import kotlinx.android.synthetic.main.activity_main.btn_permission
 import kotlinx.android.synthetic.main.activity_main.btn_recycler_api
 import kotlinx.android.synthetic.main.activity_main.btn_recyclerview
@@ -54,101 +57,109 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Oncreate Called")
 
         (intent.getParcelableExtra<Parcelable>(Intent.EXTRA_STREAM) as? Uri)?.let{
-            val intent = Intent(applicationContext, BottomNavigationActivity::class.java)
+            val intent = Intent(this, BottomNavigationActivity::class.java)
             intent.putExtra(getString(R.string.key_intent),it)
             startActivity(intent)
         }
         btn_kotlin_basic.setOnClickListener {
-            intent = Intent(applicationContext, Kotlin_Basic::class.java)
+            intent = Intent(this, Kotlin_Basic::class.java)
             startActivity(intent)
         }
         btn_ui_element.setOnClickListener {
-            intent = Intent(applicationContext, UiElementActivity::class.java)
+            intent = Intent(this, UiElementActivity::class.java)
             startActivity(intent)
         }
         btn_layouts.setOnClickListener {
-            intent = Intent(applicationContext, LayoutActivity::class.java)
+            intent = Intent(this, LayoutActivity::class.java)
             intent.putExtra(getString(R.string.name_key_intent), "Jay")
             startActivity(intent)
         }
         btn_listview.setOnClickListener {
-            intent = Intent(applicationContext, ListviewActivity::class.java)
+            intent = Intent(this, ListviewActivity::class.java)
             startActivity(intent)
         }
         btn_recyclerview.setOnClickListener {
-            intent = Intent(applicationContext, RecyclerViewActivity::class.java)
+            intent = Intent(this, RecyclerViewActivity::class.java)
             startActivity(intent)
         }
         btn_recyclerview_grid.setOnClickListener {
-            intent = Intent(applicationContext, GridLayoutRecyclerViewActivity::class.java)
+            intent = Intent(this, GridLayoutRecyclerViewActivity::class.java)
             startActivity(intent)
         }
         btn_viewpager_one.setOnClickListener {
-            intent = Intent(applicationContext, ViewPageroneActivity::class.java)
+            intent = Intent(this, ViewPageroneActivity::class.java)
             startActivity(intent)
         }
         btn_viewpager_two.setOnClickListener {
-            intent = Intent(applicationContext, ViewPagertwoActivity::class.java)
+            intent = Intent(this, ViewPagertwoActivity::class.java)
             startActivity(intent)
         }
         btn_viewpager_recyclerview.setOnClickListener {
-            intent = Intent(applicationContext, ViewpagertwoRecyclerviewActivity::class.java)
+            intent = Intent(this, ViewpagertwoRecyclerviewActivity::class.java)
             startActivity(intent)
         }
         btn_expandable_recyclerview.setOnClickListener {
-            intent = Intent(applicationContext, ExpandableRecyclerviewActivity::class.java)
+            intent = Intent(this, ExpandableRecyclerviewActivity::class.java)
             startActivity(intent)
         }
         btn_expandable_listview.setOnClickListener {
-            intent = Intent(applicationContext, ExpandableListviewActivity::class.java)
+            intent = Intent(this, ExpandableListviewActivity::class.java)
             startActivity(intent)
         }
         btn_bottomnavigation.setOnClickListener {
-            intent = Intent(applicationContext, BottomNavigationActivity::class.java)
+            intent = Intent(this, BottomNavigationActivity::class.java)
             startActivity(intent)
         }
         btn_fragments.setOnClickListener {
-            intent = Intent(applicationContext, FragmentActivity::class.java)
+            intent = Intent(this, FragmentActivity::class.java)
             startActivity(intent)
         }
         btn_intent.setOnClickListener {
-            intent = Intent(applicationContext, IntentActivity::class.java)
+            intent = Intent(this, IntentActivity::class.java)
             resultLauncher.launch(intent)
         }
         btn_navgraph.setOnClickListener {
-            intent = Intent(applicationContext, NavgraphActivity::class.java)
+            intent = Intent(this, NavgraphActivity::class.java)
             startActivity(intent)
         }
        btn_webview.setOnClickListener {
-            intent = Intent(applicationContext, WebviewActivity::class.java)
+            intent = Intent(this, WebviewActivity::class.java)
             startActivity(intent)
         }
         btn_recycler_api.setOnClickListener {
-            intent = Intent(applicationContext, RecyclerWebActivity::class.java)
+            intent = Intent(this, RecyclerWebActivity::class.java)
             startActivity(intent)
         }
         btn_mvp.setOnClickListener {
-            intent = Intent(applicationContext,MVPActivity::class.java)
+            intent = Intent(this,MVPActivity::class.java)
             startActivity(intent)
         }
         btn_mvc.setOnClickListener {
-            intent = Intent(applicationContext,MVCActivity::class.java)
+            intent = Intent(this,MVCActivity::class.java)
             startActivity(intent)
         }
         btn_mvvm.setOnClickListener {
-            intent = Intent(applicationContext,MVVMActivity::class.java)
+            intent = Intent(this,MVVMActivity::class.java)
             startActivity(intent)
         }
         btn_inversebinding.setOnClickListener {
-            intent = Intent(applicationContext,DataBindingActivity::class.java)
+            intent = Intent(this,DataBindingActivity::class.java)
             startActivity(intent)
         }
         btn_temprecyclerview.setOnClickListener {
-            intent = Intent(applicationContext,TempActivity::class.java)
+            intent = Intent(this,TempActivity::class.java)
             startActivity(intent)
         }
         btn_permission.setOnClickListener {
-            intent = Intent(applicationContext,PermissionActivity::class.java)
+            intent = Intent(this,PermissionActivity::class.java)
+            startActivity(intent)
+        }
+        btn_navigationview.setOnClickListener {
+            intent = Intent(this,NavigationViewActivity::class.java)
+            startActivity(intent)
+        }
+        btn_coordinator.setOnClickListener {
+            intent = Intent(this,CoordinatorLayoutActivity::class.java)
             startActivity(intent)
         }
     }
