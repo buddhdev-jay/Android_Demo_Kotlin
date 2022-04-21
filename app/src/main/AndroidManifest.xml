@@ -12,10 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Demo_Kotlin">
         <activity
+            android:name=".AdapterBindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DataBinding.DataBindingActivity"
+            android:exported="false" />
+        <activity
             android:name=".MVC.MVCActivity"
             android:exported="false" />
         <activity
-            android:name=".MVVM.MVVMActivity"
+            android:name=".mvvm.MVVMActivity"
             android:exported="false" />
         <activity
             android:name=".MVP.MVPActivity"

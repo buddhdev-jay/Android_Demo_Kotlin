@@ -1,11 +1,11 @@
-package com.example.android_demo_kotlin.MVVM.viewmodels
+package com.example.android_demo_kotlin.mvvm.viewmodels
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.android_demo_kotlin.MVVM.data.RecyclerData
+import com.example.android_demo_kotlin.mvvm.data.RecyclerData
 import com.example.android_demo_kotlin.R
 import kotlinx.android.synthetic.main.recyclerview_row_mvvm.view.img_recylerview_item
 

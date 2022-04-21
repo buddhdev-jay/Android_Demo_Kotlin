@@ -1,6 +1,6 @@
-package com.example.android_demo_kotlin.MVVM.Retrofit
+package com.example.android_demo_kotlin.mvvm.Retrofit
 
-import com.example.android_demo_kotlin.MVVM.data.RecyclerList
+import com.example.android_demo_kotlin.mvvm.data.RecyclerList
 import com.example.android_demo_kotlin.utils.REPOSITORIES
 import com.example.android_demo_kotlin.utils.SEARCH_QUERY_VARIABLE
 import retrofit2.Call

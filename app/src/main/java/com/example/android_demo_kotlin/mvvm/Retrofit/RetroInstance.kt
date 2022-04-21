@@ -1,4 +1,4 @@
-package com.example.android_demo_kotlin.MVVM.Retrofit
+package com.example.android_demo_kotlin.mvvm.Retrofit
 
 import com.example.android_demo_kotlin.utils.GITHUB_API_BASE_URL
 import retrofit2.Retrofit

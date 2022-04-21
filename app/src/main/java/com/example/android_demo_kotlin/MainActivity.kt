@@ -1,6 +1,5 @@
 package com.example.android_demo_kotlin
 
-import android.R.attr
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -12,10 +11,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.android_demo_kotlin.MVC.MVCActivity
 import com.example.android_demo_kotlin.MVP.MVPActivity
-import com.example.android_demo_kotlin.MVVM.MVVMActivity
+import com.example.android_demo_kotlin.mvvm.MVVMActivity
 import com.example.android_demo_kotlin.WebServices.RecyclerWebActivity
 import com.example.android_demo_kotlin.differentLayout.LayoutActivity
-import kotlinx.android.synthetic.main.activity_intent.btn_pending_intent
+import kotlinx.android.synthetic.main.activity_main.btn_adapterbinding
 import kotlinx.android.synthetic.main.activity_main.btn_bottomnavigation
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_listview
 import kotlinx.android.synthetic.main.activity_main.btn_expandable_recyclerview
@@ -36,7 +35,6 @@ import kotlinx.android.synthetic.main.activity_main.btn_viewpager_one
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_recyclerview
 import kotlinx.android.synthetic.main.activity_main.btn_viewpager_two
 import kotlinx.android.synthetic.main.activity_main.btn_webview
-import kotlinx.android.synthetic.main.activity_webview.btn_login_webview
 
 
 class MainActivity : AppCompatActivity() {
@@ -131,6 +129,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_mvvm.setOnClickListener {
             intent = Intent(applicationContext,MVVMActivity::class.java)
+            startActivity(intent)
+        }
+        btn_adapterbinding.setOnClickListener {
+            intent = Intent(applicationContext,AdapterBindingActivity::class.java)
             startActivity(intent)
         }
     }
