@@ -1,117 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".differentLayout.RelativeLayoutActivity">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt_title_feedback"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:lines="2"
-        android:text="@string/feedback_title"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="27sp" />
+        android:background="@color/black"
+        tools:context=".differentLayout.RelativeLayoutActivity">
 
-    <View
-        android:id="@+id/spaces"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_below="@id/txt_title_feedback"
-        android:layout_centerHorizontal="true" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_title_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="2"
+            android:text="@string/feedback_title"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="27sp" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editxt_name_relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_title_feedback"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_toStartOf="@id/spaces"
-        android:background="@drawable/editxt_border"
-        android:hint="@string/hint_your_name"
-        android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/hinttextform"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <View
+            android:id="@+id/spaces"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_below="@id/txt_title_feedback"
+            android:layout_centerHorizontal="true" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editxt_email_relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spaces"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_toEndOf="@id/editxt_name_relative"
-        android:background="@drawable/editxt_border"
-        android:hint="@string/hint_your_email"
-        android:inputType="textEmailAddress"
-        android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/hinttextform"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editxt_name_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_title_feedback"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toStartOf="@id/spaces"
+            android:background="@drawable/editxt_border"
+            android:hint="@string/hint_your_name"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/hinttextform"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        android:id="@+id/spinner_country_relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editxt_email_relative"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/editxt_border"
-        android:padding="20dp" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editxt_email_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spaces"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/editxt_name_relative"
+            android:background="@drawable/editxt_border"
+            android:hint="@string/hint_your_email"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/hinttextform"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/editxt_feedback_relative"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/spinner_country_relative"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/editxt_border"
-        android:hint="@string/hint_feedback_details"
-        android:inputType="textMultiLine"
-        android:lines="8"
-        android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/hinttextform"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_country_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editxt_email_relative"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/editxt_border"
+            android:padding="20dp" />
 
-    <androidx.appcompat.widget.AppCompatCheckBox
-        android:id="@+id/chcx_box_form_relative"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editxt_feedback_relative"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:buttonTint="#bfbfbf"
-        android:text="@string/chck_txt_would_you_like_and_email_response"
-        android:textColor="#bfbfbf"
-        android:textSize="20sp" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/editxt_feedback_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/spinner_country_relative"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/editxt_border"
+            android:hint="@string/hint_feedback_details"
+            android:inputType="textMultiLine"
+            android:lines="8"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/hinttextform"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_submit_form_linear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/chcx_box_form_relative"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:background="#bfbfbf"
-        android:padding="5dp"
-        android:text="@string/btn_txt_send_feedback"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
-</RelativeLayout>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/chcx_box_form_relative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editxt_feedback_relative"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:buttonTint="#bfbfbf"
+            android:text="@string/chck_txt_would_you_like_and_email_response"
+            android:textColor="#bfbfbf"
+            android:textSize="20sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_submit_form_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/chcx_box_form_relative"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="#bfbfbf"
+            android:padding="5dp"
+            android:text="@string/btn_txt_send_feedback"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</ScrollView>
