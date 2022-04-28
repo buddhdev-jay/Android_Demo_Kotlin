@@ -21,7 +21,7 @@ class PendingActivity : AppCompatActivity() {
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         btn_pending_intent_start.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            val pendingIntent = PendingIntent.getActivity(this, ZERO, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            val pendingIntent = PendingIntent.getActivity(this, ZERO, intent, PendingIntent.FLAG_IMMUTABLE)
             val builder_new = NotificationCompat.Builder(this, getString(R.string.hello_nullsafe_string))
                 .setSmallIcon(R.drawable.ic_baseline_account_box_24)
                 .setContentTitle(getString(R.string.my_app_txt))
