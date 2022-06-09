@@ -22,12 +22,19 @@ import kotlinx.android.synthetic.main.activity_login.editxt_email_login
 import kotlinx.android.synthetic.main.activity_login.editxt_password_login
 import kotlinx.android.synthetic.main.activity_login.progressbar_login
 import org.json.JSONObject
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        AppCenter.start(
+            application, "f83e1a90-2b0f-486e-b7f1-4597ab0070ae",
+            Analytics::class.java, Crashes::class.java
+        )
         val prefs = getSharedPreferences(getString(R.string.sharedpref_name), Context.MODE_PRIVATE)
        if(prefs.getBoolean(getString(R.string.login_state),false)){
            intent = Intent(applicationContext, MainActivity::class.java)
