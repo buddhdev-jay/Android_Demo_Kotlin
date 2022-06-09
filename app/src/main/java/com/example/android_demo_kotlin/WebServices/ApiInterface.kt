@@ -24,8 +24,6 @@ interface ApiInterface {
     fun addUser(@Body userData: UserInfo): Call<UserInfo>
 
     companion object {
-
-
         private var interceptor = OkHttpProfilerInterceptor()
         private val okHttpClientBuilder = OkHttpClient.Builder().addInterceptor(interceptor)
             .addInterceptor(
